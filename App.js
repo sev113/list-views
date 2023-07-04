@@ -1,11 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from "react-native";
+import FlatListBasics from "./src/components/FlatListBasics";
+import SectionListBasics from "./src/components/SectionListBasics";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={{ marginBottom: 30, textAlign: "center" }}>
+        Hello World, This is about Flat List and Section List.
+      </Text>
+      <View style={styles.list_wrapper}>
+        <FlatListBasics />
+        <SectionListBasics />
+      </View>
     </View>
   );
 }
@@ -13,8 +19,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    marginTop: StatusBar.currentHeight,
+    marginBottom: 50,
+  },
+  list_wrapper: {
+    flexDirection: "row",
   },
 });
